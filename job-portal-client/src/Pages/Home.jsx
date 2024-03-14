@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import Banner from "../componentes/Banner"
 import Card from "../componentes/Card";
 import Jobs from "./Jobs";
+import Sidebar from "../sidebar/Sidebar";
 
 const Home = () =>  {
   const [selectedCategory, setSelectedCategory]=useState(null);
@@ -78,8 +79,19 @@ const result = filteredData(jobs, selectedCategory, query);
       <Banner query={query} handleInputChange={handleInputChange}/>
      {/*main content */}
       <div className=" bg-[#FAFAFA] md:grid grid-cols-4 gap-8 lg:px-24 px-4 py-12">
-        <div className=" bg-white p-4 rounded">Left</div>
+        {/* left site */}
+        <div className=" bg-white p-4 rounded">
+          <Sidebar handleChange={handleChange} handleClick={handleClick}/>
+        </div>
+        
+              
+
+
+        {/*job cards */}
         <div className=" col-span-2 bg-white p-4 rounded-sm"><Jobs result={result}/></div>
+
+
+        {/* right site */}
         <div className=" bg-white p-4 rounded">Right</div>
         
       </div>

@@ -7,11 +7,16 @@ import Sidebar from "../sidebar/Sidebar";
 const Home = () =>  {
   const [selectedCategory, setSelectedCategory]=useState(null);
   const [jobs, setJobs]= useState([]);
+  const [isLoading, setIsLoading] = useState(true);
+  const [currentPage, setCurrentPage ] = useState(1);
+  const itemsPerpage =6;
 
   useEffect(()=>{
+    setIsLoading(true);
     fetch("jobs.json").then (res => res.json ()).then( data =>{
       //console.log(data)
-      setJobs(data)
+      setJobs(data);
+      setIsLoading(false)
     })
   }, [])
 
@@ -40,6 +45,35 @@ const Home = () =>  {
 const handleClick = (event) => {
   setSelectedCategory(event.target.value)
 }
+//calculate index range
+
+const calculatePageRange= () => {
+  const startIndex =(currentPage - 1) * itemsPerpage;
+  const endIndex = startIndex + itemsPerpage;
+  return {startIndex, endIndex};
+
+}
+
+
+//function for next page
+
+const nextPage =() => {
+    if( currentPage < Math.ceil(filteredItems.length/ itemsPerpage)){
+      setCurrentPage(currentPage + 1 );
+    }
+}
+
+//function for the previous page
+
+const prevPage = () =>{
+  if(currentPage > 1){
+    setCurrentPage(currentPage - 1 )
+
+  }
+}
+
+
+ 
 
 //main funtion
 
@@ -67,7 +101,9 @@ const filteredData =(jobs, selected, query) =>{
     console.log(filteredJobs);
   }
 
-
+  // slice the data based on current page
+  const {startIndex, endIndex} = calculatePageRange();
+  filteredJobs = filteredJobs.slice(startIndex, endIndex)
   return filteredJobs.map((data, i) => <Card key={i} data={data}/>)
 }
 
@@ -88,7 +124,29 @@ const result = filteredData(jobs, selectedCategory, query);
 
 
         {/*job cards */}
-        <div className=" col-span-2 bg-white p-4 rounded-sm"><Jobs result={result}/></div>
+        <div className=" col-span-2 bg-white p-4 rounded-sm">
+          {
+            isLoading ? (<p className=" font-medium">Loading...</p>) :  result.length > 0  ? (<Jobs result={result}/>) : <>
+            <h3 className=" text-lg font-bold mb-2">{result.length} Jobs</h3>
+            <p>No data found</p>
+            </>
+          }
+           
+          {/*pagination  here */}
+          {
+            result.length > 0 ? (
+              <div className=" flex justify-center mt-4 space-x-8">
+                <button onClick={prevPage} disabled={currentPage === 1}>Previous</button>
+                <span className=" mx-2">Page {currentPage} of {Math.ceil(filteredItems.length/ itemsPerpage)}</span>
+                <button onClick={nextPage} disabled={currentPage === Math.ceil(filteredItems.length / itemsPerpage) } className=" hover:underline">Next</button>
+          
+              </div>
+
+            ) : ""
+          }
+          
+          
+          </div>
 
 
         {/* right site */}

@@ -3,6 +3,7 @@ import Banner from "../componentes/Banner"
 import Card from "../componentes/Card";
 import Jobs from "./Jobs";
 import Sidebar from "../sidebar/Sidebar";
+import Newsletter from "../componentes/Newsletter";
 
 const Home = () =>  {
   const [selectedCategory, setSelectedCategory]=useState(null);
@@ -150,7 +151,7 @@ const result = filteredData(jobs, selectedCategory, query);
 
 
         {/* right site */}
-        <div className=" bg-white p-4 rounded">Right</div>
+        <div className=" bg-white p-4 rounded"><Newsletter/></div>
         
       </div>
     </div>

@@ -12,7 +12,6 @@ const Navbar = () => {
     const navItems=[
         {patch: "/", title: "Хайлт эхлүүлэх"},
         {patch: "/my-job", title: "Миний ажил"},
-        {patch: "salary", title: "Цалингийн тооцоо"},
         {patch: "/post-job", title: "Ажил нийтлэх"},
     ]
   return (

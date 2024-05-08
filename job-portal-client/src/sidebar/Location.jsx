@@ -4,18 +4,21 @@ import InputField from '../componentes/InputField'
 const Location = ({handleChange}) => {
   return (
     <div>
-        <h4 className=' text-lg font-medium mb-2'>Location</h4>
+        <h4 className=' text-lg font-medium mb-2'>Байршил</h4>
 
         <div>
             <label className='sidebar-label-container'>
                 <input type="radio" name="test" id="test" value="" onChange={handleChange} />
-                <span className='checkmark'></span>All
+                <span className='checkmark'></span>Бүгд
             </label>
 
-            <InputField handleChange={handleChange} value="London" title="London" name="test"/>
-            <InputField handleChange={handleChange} value="Seattle" title="Seattle" name="test"/>
-            <InputField handleChange={handleChange} value="madrid" title="Madrid" name="test"/>
-            <InputField handleChange={handleChange} value="boston" title="Boston" name="test"/>
+            <InputField handleChange={handleChange} value="Сонгинохайрхан дүүрэг
+" title="Сонгинохайрхан дүүрэг
+" name="test"/>
+            <InputField handleChange={handleChange} value="Баянзүрх Дүүрэг" title="Баянзүрх Дүүрэг" name="test"/>
+            <InputField handleChange={handleChange} value="Сүхбаатар дүүрэг" title="Сүхбаатар дүүрэг" name="test"/>
+            <InputField handleChange={handleChange} value="БГД" title="Баянгол дүүрэг" name="test"/>
+            <InputField handleChange={handleChange} value="Бусад" title="Бусад" name="test"/>
         </div>
     </div>
   )

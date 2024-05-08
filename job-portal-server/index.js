@@ -51,6 +51,10 @@ async function run() {
         }
     })
 
+   
+
+   
+
     //get all jobs
     app.get("/all-jobs", async(req, res) => {
         const jobs = await jobsCollections.find({}).toArray()
@@ -64,7 +68,26 @@ async function run() {
       })
       res.send(job)
     })
-
+  //sdsa
+  app.get("/getAllUser", async (req, res) => {
+    let query = {};
+    const searchData = req.query.search;
+    if (searchData) {
+      query = {
+        $or: [
+          { fname: { $regex: searchData, $options: "i" } },
+          { email: { $regex: searchData, $options: "i" } },
+        ],
+      };
+    }
+  
+    try {
+      const allUser = await User.find(query);
+      res.send({ status: "ok", data: allUser });
+    } catch (error) {
+      console.log(error);
+    }
+  });
 
     // get jobs by email
     app.get("/myJobs/:email", async(req, res) => {
@@ -96,6 +119,9 @@ async function run() {
       const result = await jobsCollections.updateOne(filter, updateDoc, options );
       res.send(result)
     })
+
+
+    //login
 
     
     // Send a ping to confirm a successful connection

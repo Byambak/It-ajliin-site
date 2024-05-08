@@ -52,13 +52,13 @@ const UpdateJob = () => {
          {/* 1st row */}
         <div className=" create-job-flex">
             <div className=" lg:w-1/2 w-full">
-                  <label className=" block mb-2 text-lg">Job Title</label>
+                  <label className=" block mb-2 text-lg">Албан тушаал</label>
                   <input type="text" defaultValue={jobTitle} 
                   {...register("jobTitle")} className="create-job-input " />
             </div>
 
             <div className=" lg:w-1/2 w-full">
-                  <label className=" block mb-2 text-lg">Company Name</label>
+                  <label className=" block mb-2 text-lg">Компанийн нэр</label>
                   <input type="text" placeholder="Ex: Microsoft"
                   defaultValue={companyName} 
                   {...register("companyName")} className="create-job-input " />
@@ -69,15 +69,15 @@ const UpdateJob = () => {
         {/* 2st row */}
         <div className=" create-job-flex">
             <div className=" lg:w-1/2 w-full">
-                  <label className=" block mb-2 text-lg">Minimum Salary </label>
+                  <label className=" block mb-2 text-lg">Компанийн нэр </label>
                   <input type="text" defaultValue={minPrice}
                   
                   {...register("minPrice")} className="create-job-input " />
             </div>
 
             <div className=" lg:w-1/2 w-full">
-                  <label className=" block mb-2 text-lg">Maximum Salary </label>
-                  <input type="text" placeholder="$120k"
+                  <label className=" block mb-2 text-lg">Хамгийн их цалин </label>
+                  <input type="text" placeholder="1000000₮"
                   defaultValue={maxPrice}
                   {...register("maxPrice")} className="create-job-input " />
             </div>
@@ -88,12 +88,12 @@ const UpdateJob = () => {
         {/* 3st row */}
         <div className=" create-job-flex">
           <div className=" lg:w-1/2 w-full">
-                  <label className=" block mb-2 text-lg">Salary Type </label>
+                  <label className=" block mb-2 text-lg">Цалингийн төрөл </label>
                   <select {...register("salaryType")} className="create-job-input ">
                         <option value={salaryType}>{salaryType}</option>
-                        <option value="Hourly">Hourly</option>
-                        <option value="Monthly">Monthly</option>
-                        <option value="Yearly">Yearly</option>
+                        <option value="Цагийн">Цагийн</option>
+                        <option value="Сар бүр">Сар бүр</option>
+                        <option value="Жил бүр">Жил бүр</option>
                   </select>
 
 
@@ -101,7 +101,7 @@ const UpdateJob = () => {
             </div>
 
             <div className=" lg:w-1/2 w-full">
-                  <label className=" block mb-2 text-lg">Job Location</label>
+                  <label className=" block mb-2 text-lg">Хаяг Байршил</label>
                   <input type="text" placeholder="Ex: New York"
                   defaultValue={jobLocation}
                   {...register("jobLocation")} className="create-job-input " />
@@ -112,19 +112,19 @@ const UpdateJob = () => {
         {/* 4st row */}
         <div className=" create-job-flex">
         <div className=" lg:w-1/2 w-full">
-                  <label className=" block mb-2 text-lg">Job Posting Date</label>
+                  <label className=" block mb-2 text-lg">Ажлын байр зарласан огноо</label>
                   <input type="date" placeholder="Ex: 2024-04-29"
                   defaultValue={postingDate}
                   {...register("postingDate")} className="create-job-input " />
             </div>
 
           <div className=" lg:w-1/2 w-full">
-                  <label className=" block mb-2 text-lg">Experience level</label>
+                  <label className=" block mb-2 text-lg">Төрөл</label>
                   <select {...register("experienceLevel")} className="create-job-input ">
                         <option value={experienceLevel}>{experienceLevel}</option>
-                        <option value="NoExperience">Hourly</option>
-                        <option value="Intership">Intership</option>
-                        <option value="Work remotely">Work remotely</option>
+                        <option value="NoExperience">Цагийн</option>
+                        <option value="Intership">Дадлага хийх</option>
+                        <option value="Work remotely">Алсын зайнаас ажиллах</option>
                   </select>
 
 
@@ -136,7 +136,7 @@ const UpdateJob = () => {
         
         {/* 5st row */}
         <div>
-        <label className=" block mb-2 text-lg">Required Skill Sets:</label>
+        <label className=" block mb-2 text-lg">Шаардлагатай ур чадвар</label>
         <CreatableSelect
         defaultValue={skills}
         onChange={setselectedOption}
@@ -149,19 +149,19 @@ const UpdateJob = () => {
         {/* 6st row */}
         <div className=" create-job-flex">
         <div className=" lg:w-1/2 w-full">
-                  <label className=" block mb-2 text-lg">Company Logo</label>
+                  <label className=" block mb-2 text-lg">Компанийн лого</label>
                   <input type="url" placeholder="Paste your company logo URL:https://weshare.com/img"
                   defaultValue={companyLogo}
                   {...register("companyLogo")} className="create-job-input " />
             </div>
 
           <div className=" lg:w-1/2 w-full">
-                  <label className=" block mb-2 text-lg">Employment Type</label>
+                  <label className=" block mb-2 text-lg">Хөдөлмөр эрхлэлтийн төрөл</label>
                   <select {...register("employmentType")} className="create-job-input ">
-                        <option value="">Choose job type</option>
-                        <option value="Full-time">Full-time</option>
-                        <option value="Part-time">Part-time</option>
-                        <option value="Temporary">Temporary</option>
+                        <option value="">Ажлын төрлийг сонгох</option>
+                        <option value="Бүтэн цагийн">Бүтэн цагийн</option>
+                        <option value="Хагас цагийн">Хагас цагийн</option>
+                        <option value="Түр зуур">Түр зуур</option>
                   </select>
 
 

@@ -6,6 +6,8 @@ import CreateJob from "../Pages/CreateJob";
 import Myjobs from "../Pages/Myjobs";
 import UpdateJob from "../Pages/UpdateJob";
 import Login from "../componentes/Login";
+import SignUp from "../componentes/SignUp";
+
 
 const router = createBrowserRouter([
     {
@@ -32,7 +34,13 @@ const router = createBrowserRouter([
     {
       path: "/login",
       element:<Login/>
-    }
+    },
+    {
+      path:"/register",
+      element:<SignUp/>
+    },
+ 
+  
   ]);
 
   export default router

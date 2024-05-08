@@ -4,17 +4,17 @@ import InputField from '../componentes/InputField'
 
 const Salary = ({handleChange, handleClick} ) => {
   return (
-    <div><h4 className=' text-lg font-medium mb-2'>Salary </h4>
+    <div><h4 className=' text-lg font-medium mb-2'>Цалин хөлс </h4>
     <div className='mb-4'>
-     <Button onClickHandler={handleClick} value="" title="Hourly"/>
-     <Button onClickHandler={handleClick} value="Monthly" title="Monthly"/>
-     <Button onClickHandler={handleClick} value="Yearly" title="Yearly"/>
+     <Button onClickHandler={handleClick} value="" title="Цагаар"/>
+     <Button onClickHandler={handleClick} value="Сараар" title="Сараар"/>
+     <Button onClickHandler={handleClick} value="Жилээр" title="Жилээр"/>
     </div>
         
      <div>
      <label className='sidebar-label-container'>
                 <input type="radio" name="test" id="test" value="" onChange={handleChange} />
-                <span className='checkmark'></span>All
+                <span className='checkmark'></span>Бүгд
             </label>
 
             <InputField handleChange={handleChange} value={30} title="< 30000k" name="test2"/>

@@ -68,7 +68,7 @@ const nextPage =() => {
 
 const prevPage = () =>{
   if(currentPage > 1){
-    setCurrentPage(currentPage - 1 )
+    setCurrentPage(currentPage - 1 );
 
   }
 }
@@ -128,8 +128,8 @@ const result = filteredData(jobs, selectedCategory, query);
         <div className=" col-span-2 bg-white p-4 rounded-sm">
           {
             isLoading ? (<p className=" font-medium">Loading...</p>) :  result.length > 0  ? (<Jobs result={result}/>) : <>
-            <h3 className=" text-lg font-bold mb-2">{result.length} Jobs</h3>
-            <p>No data found</p>
+            <h3 className=" text-lg font-bold mb-2">{result.length} Ажлын байр</h3>
+            <p>Өгөгдөл олдсонгүй</p> 
             </>
           }
            
@@ -137,9 +137,9 @@ const result = filteredData(jobs, selectedCategory, query);
           {
             result.length > 0 ? (
               <div className=" flex justify-center mt-4 space-x-8">
-                <button onClick={prevPage} disabled={currentPage === 1}>Previous</button>
-                <span className=" mx-2">Page {currentPage} of {Math.ceil(filteredItems.length/ itemsPerpage)}</span>
-                <button onClick={nextPage} disabled={currentPage === Math.ceil(filteredItems.length / itemsPerpage) } className=" hover:underline">Next</button>
+                <button onClick={prevPage} disabled={currentPage === 1}>Өмнөх</button>
+                <span className=" mx-2">Хуудас {currentPage} of {Math.ceil(filteredItems.length/ itemsPerpage)}</span>
+                <button onClick={nextPage} disabled={currentPage === Math.ceil(filteredItems.length / itemsPerpage) } className=" hover:underline">Дараачийн</button>
           
               </div>
 

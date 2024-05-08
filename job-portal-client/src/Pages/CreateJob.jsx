@@ -45,14 +45,14 @@ const CreateJob = () => {
              {/* 1st row */}
             <div className=" create-job-flex">
                 <div className=" lg:w-1/2 w-full">
-                      <label className=" block mb-2 text-lg">Job Title</label>
-                      <input type="text" defaultValue={"Web Developer"} 
+                      <label className=" block mb-2 text-lg">Албан тушаал</label>
+                      <input type="text" defaultValue={""} 
                       {...register("jobTitle")} className="create-job-input " />
                 </div>
 
                 <div className=" lg:w-1/2 w-full">
-                      <label className=" block mb-2 text-lg">Company Name</label>
-                      <input type="text" placeholder="Ex: Microsoft"
+                      <label className=" block mb-2 text-lg">Компанийн нэр</label>
+                      <input type="text" placeholder=""
                       {...register("companyName")} className="create-job-input " />
                 </div>
 
@@ -61,14 +61,14 @@ const CreateJob = () => {
             {/* 2st row */}
             <div className=" create-job-flex">
                 <div className=" lg:w-1/2 w-full">
-                      <label className=" block mb-2 text-lg">Minimum Salary </label>
-                      <input type="text" defaultValue={"$20k"} 
+                      <label className=" block mb-2 text-lg">Хамгийн бага цалин </label>
+                      <input type="text" defaultValue={"1000000₮"} 
                       {...register("minPrice")} className="create-job-input " />
                 </div>
 
                 <div className=" lg:w-1/2 w-full">
-                      <label className=" block mb-2 text-lg">Maximum Salary </label>
-                      <input type="text" placeholder="$120k"
+                      <label className=" block mb-2 text-lg">Хамгийн их цалин </label>
+                      <input type="text" placeholder="1000000₮"
                       {...register("maxPrice")} className="create-job-input " />
                 </div>
 
@@ -78,12 +78,12 @@ const CreateJob = () => {
             {/* 3st row */}
             <div className=" create-job-flex">
               <div className=" lg:w-1/2 w-full">
-                      <label className=" block mb-2 text-lg">Salary Type </label>
+                      <label className=" block mb-2 text-lg">Цалингийн төрөл </label>
                       <select {...register("salaryType")} className="create-job-input ">
-                            <option value="">Choose your salary</option>
-                            <option value="Hourly">Hourly</option>
-                            <option value="Monthly">Monthly</option>
-                            <option value="Yearly">Yearly</option>
+                            <option value="">Цалингаа сонгох</option>
+                            <option value="Цагийн">Цагийн</option>
+                            <option value="Сар бүр">Сар бүр</option>
+                            <option value="Жил бүр">Жил бүр</option>
                       </select>
 
 
@@ -91,8 +91,8 @@ const CreateJob = () => {
                 </div>
 
                 <div className=" lg:w-1/2 w-full">
-                      <label className=" block mb-2 text-lg">Job Location</label>
-                      <input type="text" placeholder="Ex: New York"
+                      <label className=" block mb-2 text-lg">Хаяг Байршил</label>
+                      <input type="text" placeholder="Сонгинохайрхан дүүрэг"
                       {...register("jobLocation")} className="create-job-input " />
                 </div>
 
@@ -101,18 +101,18 @@ const CreateJob = () => {
             {/* 4st row */}
             <div className=" create-job-flex">
             <div className=" lg:w-1/2 w-full">
-                      <label className=" block mb-2 text-lg">Job Posting Date</label>
+                      <label className=" block mb-2 text-lg">Ажлын байр зарласан огноо</label>
                       <input type="date" placeholder="Ex: 2024-04-29"
                       {...register("postingDate")} className="create-job-input " />
                 </div>
 
               <div className=" lg:w-1/2 w-full">
-                      <label className=" block mb-2 text-lg">Experience level</label>
+                      <label className=" block mb-2 text-lg">Төрөл</label>
                       <select {...register("experienceLevel")} className="create-job-input ">
-                            <option value="">Choose your experience</option>
-                            <option value="NoExperience">Hourly</option>
-                            <option value="Intership">Intership</option>
-                            <option value="Work remotely">Work remotely</option>
+                            <option value="">Төрөлөө сонгох</option>
+                            <option value="NoExperience">Цагийн</option>
+                            <option value="Intership">Дадлага хийх</option>
+                            <option value="Work remotely">Алсын зайнаас ажиллах</option>
                       </select>
 
 
@@ -124,7 +124,7 @@ const CreateJob = () => {
             
             {/* 5st row */}
             <div>
-            <label className=" block mb-2 text-lg">Required Skill Sets:</label>
+            <label className=" block mb-2 text-lg">Шаардлагатай ур чадвар</label>
             <CreatableSelect
             defaultValue={selectedOption}
             onChange={setselectedOption}
@@ -137,18 +137,18 @@ const CreateJob = () => {
             {/* 6st row */}
             <div className=" create-job-flex">
             <div className=" lg:w-1/2 w-full">
-                      <label className=" block mb-2 text-lg">Company Logo</label>
+                      <label className=" block mb-2 text-lg">Компанийн лого</label>
                       <input type="url" placeholder="Paste your company logo URL:https://weshare.com/img"
                       {...register("companyLogo")} className="create-job-input " />
                 </div>
 
               <div className=" lg:w-1/2 w-full">
-                      <label className=" block mb-2 text-lg">Employment Type</label>
+                      <label className=" block mb-2 text-lg">Хөдөлмөр эрхлэлтийн төрөл</label>
                       <select {...register("employmentType")} className="create-job-input ">
-                            <option value="">Choose job type</option>
-                            <option value="Full-time">Full-time</option>
-                            <option value="Part-time">Part-time</option>
-                            <option value="Temporary">Temporary</option>
+                            <option value="">Ажлын төрлийг сонгох</option>
+                            <option value="Бүтэн цагийн">Бүтэн цагийн</option>
+                            <option value="Хагас цагийн">Хагас цагийн</option>
+                            <option value="TТүр зуур">Түр зуур</option>
                       </select>
 
 
@@ -160,11 +160,11 @@ const CreateJob = () => {
             
             {/* 7st row */}
             <div className="w-full">
-            <label className=" block mb-2 text-lg">Job Description</label>
+            <label className=" block mb-2 text-lg">Ажлын байрны тайлбар</label>
             <textarea className=" w-full pl-3 py-1.5 focus:outline-none placeholder: text-gray-700"
             rows={6}
-            defaultValue={"sdsadsadsadsadasdsadsadsadsadsad"}
-            placeholder="Job Description" 
+            defaultValue={""}
+            placeholder="Ажлын байрны тайлбар" 
             {...register("description")} />
 
 
@@ -172,8 +172,8 @@ const CreateJob = () => {
 
             {/* last row */}
             <div className="w-full">
-            <label className=" block mb-2 text-lg">Job Posted By</label>
-            <input type="email" placeholder="Your email"
+            <label className=" block mb-2 text-lg">Ажлын байрыг нийтэлсэн</label>
+            <input type="email" placeholder="Таны имэйл"
                       {...register("postedBy")} className="create-job-input " />
             </div>
 
